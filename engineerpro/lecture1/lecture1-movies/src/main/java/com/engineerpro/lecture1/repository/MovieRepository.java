@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-// MovieRepository.java
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findByUserId(Long userId);

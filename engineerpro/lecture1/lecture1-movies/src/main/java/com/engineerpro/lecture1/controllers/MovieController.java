@@ -1,8 +1,11 @@
 package com.engineerpro.lecture1.controllers;
 
+import com.engineerpro.lecture1.models.Movie;
 import com.engineerpro.lecture1.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/movies")
@@ -21,8 +24,8 @@ public class MovieController {
     }
 
     @GetMapping("/favorites")
-    public void getFavoriteMovies(@RequestParam Long userId) {
-        movieService.getFavoriteMovies(userId);
+    public List<Movie> getFavoriteMovies(@RequestParam Long userId) {
+        return movieService.getFavoriteMovies(userId);
 
     }
 
